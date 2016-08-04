@@ -1,3 +1,4 @@
+
 blockquote {
   border-left: 5px solid blue;
   padding: 15px;
@@ -12,11 +13,9 @@ cite {
 #external-links ul {
   list-style-type: none;
   padding-left: 0px;
-}
+ }
 
-/* you're welcome to edit the
-image, figure, and figcaption CSS if you'd like, 
-but it's optional! */
+
 img {
   width: 100%;
 }
@@ -29,4 +28,44 @@ figure {
 figcaption {
   font-style: italic;
   text-align: right;
+}
+
+body {
+  max-width: 960px;
+  text-align: left;
+  display: inline-block;
+}
+
+#external-links {
+   min-width: 20%;
+   display: inline-block;
+   vertical-align: left;
+}
+
+main {
+  width: 58%;
+  vertical-align: top;
+  display: inline-block;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: .9em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  main {
+    font-size: .7em;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  section {
+    font-size: .7em;
+  }
 }
