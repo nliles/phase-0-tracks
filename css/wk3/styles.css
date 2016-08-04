@@ -1,0 +1,48 @@
+* {
+	font-family: Helvetica;
+	background-color: #ffe9ec;
+	font-size: 14px;
+}
+
+.fancy {
+	border: 1px solid black;
+	padding: 50px;
+	margin: 10px 5px 10px 5px;
+	background-color: gray;
+	font-style: italic;
+}
+
+li {
+	list-style-type: square;
+}
+
+@media screen and (min-width: 960px) {
+  main {
+   	display: inline-block;
+    vertical-align: left;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  nav {
+   	vertical-align: right;
+    display: inline-block;
+  }
+}
+
+h1:hover {
+   color: red;
+
+}
+
+h1 {
+   letter-spacing:2px;
+}
+
+th {
+	text-decoration: underline;
+}
+
+table tr:nth-child(odd) td {
+    background-color: gray;
+}
