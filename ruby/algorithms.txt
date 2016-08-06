@@ -1,0 +1,46 @@
+-Wait until a pile of laundry is available.
+-Gather all laundry items in a laundry bag, laundry detergent, and laundry card.
+-Exit apartment building and turn left.
+-Walk until Franklin street is reached.
+-Turn right on Franklin street and continue until Park Place is reached.
+-Enter laundromat on the corner.
+-If laundry card has no available balance:
+    -Walk down the hall until you reach a wall.
+    -Locate card refill machine on wall.
+    -Put laundry card in card refill machine.
+    -Put a ten dollar bill into the card refill machine.
+    -Push red button to retrieve laundry card.
+Otherwise:
+    -do not refill laundry card.
+-Look ahead to locate unused washing machine.
+-If not there is no unused washing machine available:
+    -Sit down on orange plastic chair.
+    -Wait until unused washing machine becomes available.
+    -Walk directly towards unused washing machine when it becomes available.
+-Otherwise:
+    -Walk directly towards unused washing machine.
+-Place all items of laundry bag and laundry bag in the washing machine.
+-Place two Tide pods in the washing machine.
+-Insert laundry card in black slot on right hand side of laundry machine.
+-Wait until small red light starts flashing.
+-Press the button labeled "start."
+-Set time for 00:20:00.
+-When timer is at 00:00:00 go to washing machine.
+-Open washing machine and remove all items.
+-Look towards the west wall.
+-Look ahead to locate unusued dryers.
+-If not there is no unused dryer available:
+    -Sit down on orange plastic chair.
+    -Wait until unused dryer becomes available.
+    -Walk directly towards unused dryer when it becomes available.
+-Otherwise:
+    -Walk directly towards unused .
+-Place all items in the dryer and close the dryer door.
+-Insert laundry card in black slot on right hand side of the dryer.
+-Wait until small red light starts flashing.
+-Press the button labeled "start."
+-Set time for 00:20:00.
+-When timer is at 00:00:00 go to the dryer.
+-Remove the laundry bag from the dryer first.
+-Place all other items in the laundry bag.
+-Stop, laundry!
