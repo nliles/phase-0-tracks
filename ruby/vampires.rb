@@ -31,16 +31,20 @@ garlic_bread = gets.chomp
 
 if garlic_bread == "yes"
 	likes_garlic = true
-else garlic_bread == "no"
+elsif garlic_bread == "no"
 	likes_garlic = false 
+else
+	likes_garlic = nil 
 end 
 
 puts "Do you want health insurance?"
 wants_insurance = gets.chomp 
 if wants_insurance == "yes"
    wants_insurance = true 
-else wants_insurance == "no"
+elsif wants_insurance == "no"
 	wants_insurance = false
+else 
+	wants_insurance = nil 
 end
 
 allergies = ''  
@@ -72,7 +76,7 @@ elsif !correct_age && (!likes_garlic || !wants_insurance)
     print answer5
 else 
 	answer6 = "Results inconclusive"
-	prints answer6
+	print answer6
 end
 employees -= 1
 end
