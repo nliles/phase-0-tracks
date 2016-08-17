@@ -8,8 +8,8 @@ def alias_method
 
 while name != "quit"
 	    split_name = name.split 
-	    firstname=split_name.first.gsub!(/[aeiouyz]/, "a" => "e", "e" => "i", "i" => "o", "o" => "u", "u" => "a","z" => "b")
-	    lastname=split_name.last.gsub!(/[aeiouz]/, "a" => "e", "e" => "i", "i" => "o", "o" => "u", "u" => "a","z" => "b", "b" => "c")
+	    firstname=split_name.first.downcase.gsub!(/[aeiouyz]/, "a" => "e", "e" => "i", "i" => "o", "o" => "u", "u" => "a","z" => "b")
+	    lastname=split_name.last.downcase.gsub!(/[aeiouz]/, "a" => "e", "e" => "i", "i" => "o", "o" => "u", "u" => "a","z" => "b", "b" => "c")
 	    new_name = "#{lastname} #{firstname}"
 	    array << new_name
 	    puts "#{name} is #{new_name}"
