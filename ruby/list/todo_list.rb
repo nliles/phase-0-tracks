@@ -1,21 +1,42 @@
 class Todolist
-	def initialize(todolist)
-		@todolist = todolist
+	def initialize todolist 
+		@Todolist = todolist
 	end 
-#	def add_item(item)
-#		list.push(item)
-#	end
-#	def delete_item(item)
-#		list.delete(item)
-#	end 
-#	def retrieve_item(item)
-#		list[index]
-#	end
-	def get_items
-	    todolist
-	end
+
+def get_items
+	@Todolist
+end 
+
+def add_item(item)
+	@Todolist << item 
+end 
+
+def delete_item(item)
+	@Todolist.delete(item)
+end 
+
+def get_item(index)
+	@Todolist[index]
 end
 
+end
 
-
-
+# add_item("mop")
+# delete_item("do the dishes")
+# retrieve_item(0)
+# get_items
+# class Dog  
+#   def initialize(breed, name)  
+#     # Instance variables  
+#     @breed = breed  
+#     @name = name  
+#   end  
+  
+#   def bark  
+#     puts 'Ruff! Ruff!'  
+#   end  
+  
+#   def display  
+#     puts "I am of #{@breed} breed and my name is #{@name}"  
+#   end  
+# end  
