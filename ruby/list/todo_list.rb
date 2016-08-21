@@ -22,22 +22,3 @@ end
 
 end
 
-# add_item("mop")
-# delete_item("do the dishes")
-# retrieve_item(0)
-# get_items
-# class Dog  
-#   def initialize(breed, name)  
-#     # Instance variables  
-#     @breed = breed  
-#     @name = name  
-#   end  
-  
-#   def bark  
-#     puts 'Ruff! Ruff!'  
-#   end  
-  
-#   def display  
-#     puts "I am of #{@breed} breed and my name is #{@name}"  
-#   end  
-# end  
