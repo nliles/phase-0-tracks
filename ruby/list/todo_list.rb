@@ -9,15 +9,15 @@ class Todolist
 	end
 
 	def add_item(item)
-   	 @Todolist << item 
+   	 	@Todolist << item 
 	end
 
 	def delete_item(item)
-    @Todolist.delete(item)
+    	@Todolist.delete(item)
 	end
 
 	def get_item(index)
-    @Todolist[index]
+    	@Todolist[index]
 	end
 
 end
