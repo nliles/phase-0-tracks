@@ -70,6 +70,8 @@ santas.each do |santa|
   santa.celebrate_birthday("#{age}")
 end
 
+santa_clause = Santa.new("gender","trans")
+santa_clause.gender = "trans"
 
 
 
