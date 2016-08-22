@@ -75,6 +75,7 @@ end
 
 
 puts "How old are you?"
+<<<<<<< HEAD
 age = Random.rand(0..140) 
 santa = Santa.new("#{gender}","#{ethnicity}")
 puts "#{ethnicity}, #{gender} is #{age}."
@@ -85,6 +86,15 @@ puts "Which reindeer are you mad at?"
 bad_reindeer=gets.chomp
 santa.gets_mad_at("#{bad_reindeer}")
 santa.celebrate_birthday("#{age}")
+=======
+age = gets.to_i
+santas.each do |santa|
+  santa.celebrate_birthday("#{age}")
+end
+
+santa_clause = Santa.new("gender","trans")
+santa_clause.gender = "trans"
+>>>>>>> master
 
 
 
