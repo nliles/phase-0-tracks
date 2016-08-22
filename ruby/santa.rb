@@ -36,16 +36,28 @@ end
 
 santas = []
 santas_new = []
-gender_array = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A", "transgender", "cisgender", "androgyne"]
-ethnicities_array = ["Black", "Latino", "Chinese", "White", "African","Egyptian", "Japanese-African", "prefer not to say", "Angel", "Martian"]
+gender_array = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A", "transgender", "cisgender", "androgyne",
+"agender", "female", "bigender", "male", "female", "gender fluid", "N/A", "transgender", "cisgender", "androgyne",
+"agender", "female", "bigender", "male", "female", "gender fluid", "N/A", "transgender", "cisgender", "androgyne",
+"agender", "female", "bigender", "male", "female", "gender fluid", "N/A", "transgender", "cisgender", "androgyne",
+"agender", "female", "bigender", "male", "female", "gender fluid", "N/A", "transgender", "cisgender", "androgyne",
+"agender", "female", "bigender", "male", "female", "gender fluid", "N/A", "transgender", "cisgender", "androgyne"]
+
+ethnicities_array = ["Black", "Latino", "Chinese", "White", "African","Egyptian", "Japanese-African", "prefer not to say", "Angel", "Martian",
+"Black", "Latino", "Chinese", "White", "African","Egyptian", "Japanese-African", "prefer not to say", "Angel", "Martian",
+"Black", "Latino", "Chinese", "White", "African","Egyptian", "Japanese-African", "prefer not to say", "Angel", "Martian",
+"Black", "Latino", "Chinese", "White", "African","Egyptian", "Japanese-African", "prefer not to say", "Angel", "Martian",
+"Black", "Latino", "Chinese", "White", "African","Egyptian", "Japanese-African", "prefer not to say", "Angel", "Martian",
+"Black", "Latino", "Chinese", "White", "African","Egyptian", "Japanese-African", "prefer not to say", "Angel", "Martian"]
+
 puts "What's your gender?"
 gender = gets.chomp
 gender_array << gender
 puts "what ethnicity are you?"
 ethnicity = gets.chomp 
 ethnicities_array << ethnicity
-gender_array = gender_array.sample(5)
-ethnicities_array = ethnicities_array.sample(5)
+gender_array = gender_array.sample(40)
+ethnicities_array = ethnicities_array.sample(40)
 
 gender_array.length.times do |i|
   santas << Santa.new(gender_array[i], ethnicities_array[i])
@@ -66,7 +78,7 @@ puts "How old are you?"
 age = Random.rand(0..140) 
 santa = Santa.new("#{gender}","#{ethnicity}")
 puts "#{ethnicity}, #{gender} is #{age}."
-puts "Would you like to update your gender?"
+puts "Select a new gender:"
 gender = gets.chomp 
 puts "Santa is now #{gender}"
 puts "Which reindeer are you mad at?"
