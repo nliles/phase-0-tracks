@@ -4,6 +4,7 @@
 # -Athlete age (input = integer)
 # -Type of sport (input = string)
 # -Athlete Country (value = string)
+# -Make sure that location is readable outside of the method and that name can be changed outside of the method
 
 # Methods:
 # -Initialize method 
@@ -13,12 +14,12 @@
 
 # Initialize method
 # Arguments: name, age, sport, country
+# Add location and make sure it is readable outside of the method
 
 # train
 # -Arguments: 1
 # -Argument name: hours
 # -input needed: number of training hours
-# -get user input and pass through method
 # -print the result 
 
 # perform_skill
@@ -34,6 +35,16 @@
 # -input needed: color of medal won, medal event
 # -get user input and pass through method
 # -print the result 
+
+# Prompt user for input:
+# -Prompt user for each attribute of athlete
+# -Store all attribute input into an array
+# -Propt user for input to pass through Methods
+# -Create a loop that created varous instances of olympic_athlete and breaks when user enters no to the question about creating a new athlete
+# -Call each class method, using interpolation to pass user input through the method
+
+# Print:
+# -Print all array information and return of methods
 
 class Olympic_athlete
 	attr_reader :location  
@@ -72,64 +83,56 @@ sport_array = []
 country_array = []
 
 loop do
-puts "Would you like to create an athlete"
-input = gets.chomp
+	puts "Would you like to create an athlete"
+	input = gets.chomp
 break if input =="no"
 
-puts "What is the name of your athlete?"
-name = gets.chomp
-names_array << name
+	puts "What is the name of your athlete?"
+	name = gets.chomp
+	names_array << name
 
-puts "How old is your athlete?"
-age = gets.to_i
-age_array << age
+	puts "How old is your athlete?"
+	age = gets.to_i
+	age_array << age
 
-puts "What sport does your athlete play?"
-sport = gets.chomp
-sport_array << sport
+	puts "What sport does your athlete play?"
+	sport = gets.chomp
+	sport_array << sport
 
-puts "What country is your athlete from?"
-country = gets.chomp 
-country_array << country
+	puts "What country is your athlete from?"
+	country = gets.chomp 
+	country_array << country
 
-puts "how many hours does your athlete train?"
-hours = gets.to_i
+	puts "how many hours does your athlete train?"
+	hours = gets.to_i
 
-puts "What skill does your athlete perform?"
-skill = gets.chomp
+	puts "What skill does your athlete perform?"
+	skill = gets.chomp
 
-puts "What color medal does your athlete win(gold, silver, or bronze)?"
-medal = gets.chomp
+	puts "What color medal does your athlete win(gold, silver, or bronze)?"
+	medal = gets.chomp
 
-puts "What event does your athlete win the medal in?"
-event = gets.chomp
+	puts "What event does your athlete win the medal in?"
+	event = gets.chomp
 
 
-names_array.length.times do |i|
-p olympic_athletes << Olympic_athlete.new(names_array[i], age_array[i], sport_array[i],country_array[i])
+	names_array.length.times do |i|
+	p olympic_athletes << Olympic_athlete.new(names_array[i], age_array[i], sport_array[i],country_array[i])
+    end
+
+	olympic_athletes.each do |olympic_athlete|
+    olympic_athlete.train("#{hours}")
+	end
+
+
+	olympic_athletes.each do |olympic_athlete|
+  	olympic_athlete.performs_skill("#{skill}")
+	end
+
+	olympic_athletes.each do |olympic_athlete|
+ 	olympic_athlete.win_a_medal("#{medal}", "#{event}")
+	end
 end
-
-olympic_athletes.each do |olympic_athlete|
-  olympic_athlete.train("#{hours}")
-end
-
-
-olympic_athletes.each do |olympic_athlete|
-  olympic_athlete.performs_skill("#{skill}")
-end
-
-olympic_athletes.each do |olympic_athlete|
-  olympic_athlete.win_a_medal("#{medal}", "#{event}")
-end
-end
-
-# athlete = Olympic_athlete.new("Nastia Liukin", 19, "Gymnastics", "USA")
-# athlete.performs_skill("backflip")
-# puts "#{athlete.name} is in #{athlete.location}"
-# athlete.name = "Anastasia"
-# puts "#{athlete.name} is in #{athlete.location}"
-
-
 
 
 
