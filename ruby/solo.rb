@@ -47,8 +47,9 @@
 # -Print all array information and return of methods
 
 class Olympic_athlete
-	attr_reader :location  
+	attr_reader :sport_event
 	attr_accessor :name
+	attr_accessor :location
 
 	def initialize(name, age, sport, country)
 		@name = name
@@ -56,6 +57,7 @@ class Olympic_athlete
 		@sport = sport 
 		@country = country
 		@location = "Rio"
+		@sport_event = "Olympic Games"
 	end 
 
 	def train(hours)
@@ -132,7 +134,20 @@ break if input =="no"
 	olympic_athletes.each do |olympic_athlete|
  	olympic_athlete.win_a_medal("#{medal}", "#{event}")
 	end
+
+	olympic_athletes.each do |olympic_athlete|
+ 	puts "#{age} year old #{sport} star #{name} from the #{country} wins an Olympic #{medal} medal performing her #{skill} 
+ 	in the #{event} after training #{hours} hours a day!"
+	end
 end
+
+athlete = Olympic_athlete.new("","","","")
+puts "What a successful day in #{athlete.location}!!"
+
+athlete = Olympic_athlete.new("","","","")
+puts "What a successful #{athlete.sport_event} in #{athlete.location}!!"
+athlete.location = "Tokyo"
+puts "Hope the next #{athlete.sport_event} in #{athlete.location} are just as successful!"
 
 
 
