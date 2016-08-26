@@ -84,12 +84,16 @@ end
 # Require_relative allows your to load and access a file. Require_relative is used when the file is in the same directory. 
 
 # What are some ways to iterate through a hash?
-For this challenge, I iterated through my hash using hash.each which called the method virus_effects on each state.
+# For this challenge, I iterated through my hash using hash.each and a block method. You could also use  each_pair or
+# each_key or each_value if you wanted to only iterate over a key or a value.
 
 # When refactoring virus_effects, what stood out to you about the variables, if anything?
+# I think I was still a bit confused about when instance variables were needed and when class methods
+# needed parameters. I can clearly see that since those variables were included in initialization, it's 
+# no longer necessary to pass them through the other methods.
 
 # What concept did you most solidify in this challenge?
-# This challenge really helped me understand constants, private, and how to refactor my code. 
+# This challenge really helped me understand constants, the use of private, and how to refactor my code. 
 
 
 
