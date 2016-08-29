@@ -35,16 +35,14 @@ function compare_values(hash_1, hash_2) {
 compare_values({'name':'Steven', 'age':'54'},{'name':'Tamir', 'age':'54'});
 
 
-function reverse(str) {
-	var new_string = '';
-    for (var i = str.length -1; i >=0; i--)
-    new_string += str[i];
-    if (new_string.length > 5) {
-    console.log(new_string); 
-    } else {
-	console.log("Too short!")
-}
-}
+// Create a function that will take a number as a parameter and generate a number of strings equal to this number.
+// Store strings in an array. 
+// Create empty strings that can be generated with random characters and numbers
+// Set the length of the string and the characters
+// Randomly fill the string with characters and numbers
+// Store string in an array
+// Do this for each string 
+// Print result
 
 function Randomstring(number) {
 	array = new Array(number);
