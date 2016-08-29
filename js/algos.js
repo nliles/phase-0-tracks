@@ -45,3 +45,21 @@ function reverse(str) {
 	console.log("Too short!")
 }
 }
+
+function Randomstring(number) {
+	array = new Array(number);
+	var length = 20;
+	var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	var result = '';
+	for (var i=length; i>0; --i) result +=chars
+	[Math.floor(Math.random() * chars.length)];
+	array[i] = result;
+   console.log(array);
+}
+
+ Randomstring(3);
+
+
+
+
+
