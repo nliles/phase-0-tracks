@@ -1,0 +1,123 @@
+
+1.)
+sqlite> SELECT * FROM students;
+1|Peter|Jones|16|3.98|true|3
+2|Sally|Mills|15|4|true|2
+3|Maria|Rodriguez|14|3.5|true|1
+4|Simon|Lawson|18|3.2|false|4
+5|Mariam|Majdoub|17|3.66|true|3
+6|Aaron|Perry|17|2.97|true|4
+7|Roy|Saunders|16|3.43|false|3
+8|Jaimie|Reisner|14|3.55|false|1
+9|Amy|Singh|15|3.78|true|2
+10|Ryan|Wilson|17|3.01|false|3
+
+2.)
+sqlite> UPDATE students SET age=17 WHERE last_name="Jones";
+sqlite> SELECT * FROM students;
+1|Peter|Jones|17|3.98|true|3
+2|Sally|Mills|15|4|true|2
+3|Maria|Rodriguez|14|3.5|true|1
+4|Simon|Lawson|18|3.2|false|4
+5|Mariam|Majdoub|17|3.66|true|3
+6|Aaron|Perry|17|2.97|true|4
+7|Roy|Saunders|16|3.43|false|3
+8|Jaimie|Reisner|14|3.55|false|1
+9|Amy|Singh|15|3.78|true|2
+10|Ryan|Wilson|17|3.01|false|3
+sqlite> 
+
+3.)
+sqlite> SELECT * FROM high_school_grade,students WHERE students.grade_id = high_school_grade.id;
+3|11th Grade|1|Peter|Jones|17|3.98|true|3
+2|10th Grade|2|Sally|Mills|15|4|true|2
+1|9th Grade|3|Maria|Rodriguez|14|3.5|true|1
+4|12th Grade|4|Simon|Lawson|18|3.2|false|4
+3|11th Grade|5|Mariam|Majdoub|17|3.66|true|3
+4|12th Grade|6|Aaron|Perry|17|2.97|true|4
+3|11th Grade|7|Roy|Saunders|16|3.43|false|3
+1|9th Grade|8|Jaimie|Reisner|14|3.55|false|1
+2|10th Grade|9|Amy|Singh|15|3.78|true|2
+3|11th Grade|10|Ryan|Wilson|17|3.01|false|3
+sqlite> 
+
+4.)
+sqlite> SELECT high_school_grade.grade, students.last_name,students.first_name FROM students JOIN high_school_grade ON students.grade_id = high_school_grade.id; 
+11th Grade|Jones|Peter
+10th Grade|Mills|Sally
+9th Grade|Rodriguez|Maria
+12th Grade|Lawson|Simon
+11th Grade|Majdoub|Mariam
+12th Grade|Perry|Aaron
+11th Grade|Saunders|Roy
+9th Grade|Reisner|Jaimie
+10th Grade|Singh|Amy
+11th Grade|Wilson|Ryan
+sqlite> 
+
+5.)
+sqlite> DELETE FROM students WHERE honors is "false";
+sqlite> SELECT * FROM students;
+1|Peter|Jones|17|3.98|true|3
+2|Sally|Mills|15|4|true|2
+3|Maria|Rodriguez|14|3.5|true|1
+5|Mariam|Majdoub|17|3.66|true|3
+6|Aaron|Perry|17|2.97|true|4
+9|Amy|Singh|15|3.78|true|2
+sqlite> 
+
+Release 3:
+LEFT JOIN - The left join will return all rows from the left table, even if there are no matches in the right table.
+
+sqlite> SELECT high_school_grade.grade, students.first_name, students.last_name FROM high_school_grade LEFT JOIN students ON high_school_grade.grade = students.grade_id;
+9th Grade||
+10th Grade||
+11th Grade||
+12th Grade||
+
+sqlite> SELECT high_school_grade.id, high_school_grade.grade, students.first_name, students.last_name FROM high_school_grade LEFT JOIN students ON high_school_grade.id = students.grade_id;
+1|9th Grade|Maria|Rodriguez
+2|10th Grade|Amy|Singh
+2|10th Grade|Sally|Mills
+3|11th Grade|Mariam|Majdoub
+3|11th Grade|Peter|Jones
+4|12th Grade|Aaron|Perry
+
+CARTESIAN JOIN - A join of every row of one table to every row of another table which usually occurs when no matching join columns are specified.
+
+sqlite> SELECT grade, first_name,last_name, gpa FROM high_school_grade, students;
+9th Grade|Peter|Jones|3.98
+9th Grade|Sally|Mills|4
+9th Grade|Maria|Rodriguez|3.5
+9th Grade|Mariam|Majdoub|3.66
+9th Grade|Aaron|Perry|2.97
+9th Grade|Amy|Singh|3.78
+10th Grade|Peter|Jones|3.98
+10th Grade|Sally|Mills|4
+10th Grade|Maria|Rodriguez|3.5
+10th Grade|Mariam|Majdoub|3.66
+10th Grade|Aaron|Perry|2.97
+10th Grade|Amy|Singh|3.78
+11th Grade|Peter|Jones|3.98
+11th Grade|Sally|Mills|4
+11th Grade|Maria|Rodriguez|3.5
+11th Grade|Mariam|Majdoub|3.66
+11th Grade|Aaron|Perry|2.97
+11th Grade|Amy|Singh|3.78
+12th Grade|Peter|Jones|3.98
+12th Grade|Sally|Mills|4
+12th Grade|Maria|Rodriguez|3.5
+12th Grade|Mariam|Majdoub|3.66
+12th Grade|Aaron|Perry|2.97
+12th Grade|Amy|Singh|3.78
+
+RIGHT JOIN - Returns all rows from the right table, even if there are no matches in the left table.
+Not currently supported in sqlite3:
+Error: RIGHT and FULL OUTER JOINs are not currently supported
+
+NATURAL JOIN - Joins two tables by their common column names. It is similar to an inner join. It detects the common column names in participating tables and links them together.
+
+sqlite> SELECT * FROM high_school_grade NATURAL JOIN students;
+1|9th Grade|Peter|Jones|17|3.98|true|3
+2|10th Grade|Sally|Mills|15|4|true|2
+3|11th Grade|Maria|Rodriguez|14|3.5|true|1
