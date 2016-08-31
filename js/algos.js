@@ -44,6 +44,9 @@ compare_values({'name':'Steven', 'age':'54'},{'name':'Tamir', 'age':'54'});
 // Do this for each string 
 // Print result
 
+
+
+
 function Randomstring(number) {
 	array = new Array(number);
 	var length = 20;
