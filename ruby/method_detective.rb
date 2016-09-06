@@ -34,7 +34,7 @@ puts "The case of the disappearing last letter".chop
 # "The mystery of the missing first letter".<???>
 # => "he mystery of the missing first letter"
 puts "The mystery of the missing first letter"[1..-1]
-ru
+
 
 p "Elementary,    my   dear        Watson!".gsub(/\s+/, ' ')
 # => "Elementary, my dear Watson!"
@@ -47,4 +47,4 @@ puts "z".ord
 # the ASCII table. 
 
 
-"How many times does the letter 'a' appear in this string?".count("a")
+puts "How many times does the letter 'a' appear in this string?".count("a")
