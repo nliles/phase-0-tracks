@@ -1,3 +1,11 @@
+#Create a hash labeled interior design
+#Prompt user for input, asking name, age, number of children, apartment/house, number of bedrooms, decor theme
+#Add all user input into the hash as key value pairs
+#Ask user if they would like to update an item
+#Allow them to enter item and update
+#Update hash with new information
+#Print hash
+
 Interior_design = {}
 
 puts "What's your name?"
