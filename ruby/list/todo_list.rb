@@ -1,24 +1,25 @@
 
+
 class Todolist
-    def initialize (todolist)
-        @Todolist = todolist
-    end
 
-    def get_items
-       	@Todolist
-	end
+def initialize(list)
+    @list = list
+end 
 
-	def add_item(item)
-   	 	@Todolist << item 
-	end
+def get_items
+	@list
+end 
 
-	def delete_item(item)
-    	@Todolist.delete(item)
-	end
+def add_item(item)
+    @list << item
+end 
 
-	def get_item(index)
-    	@Todolist[index]
-	end
-
+def delete_item(item)
+    @list.delete(item)
 end
 
+def get_item(index)
+    @list.at(index)
+end
+
+end
