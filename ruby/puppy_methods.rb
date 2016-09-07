@@ -26,6 +26,14 @@ class Puppy
 
 end
 
+
+puppy = Puppy.new
+puppy.fetch("ball")
+puppy.speak(3)
+puppy.roll_over
+puppy.dog_years(40)
+puppy.jump(5)
+
 class Cat
   def initialize
     puts "Initializing a new cat instance..."
@@ -43,11 +51,14 @@ class Cat
 
   end
 
+cat_storage = []
+
+50.times {
+  cat_storage << Cat.new}
+
+  cat_storage.each do
+    |cat| puts cat.scratch("chair")
+    puts cat.purrs
+  end
 
 
-puppy = Puppy.new
-puppy.fetch("ball")
-puppy.speak(3)
-puppy.roll_over
-puppy.dog_years(40)
-puppy.jump(5)
