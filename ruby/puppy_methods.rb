@@ -24,8 +24,26 @@ class Puppy
     puts "Our dog can jump #{height} feet."
   end
 
-
 end
+
+class Cat
+  def initialize
+    puts "Initializing a new cat instance..."
+
+  end
+  
+  def scratch(item)
+    puts "The cat has scratched #{item}."
+
+  end
+
+  def purrs
+    puts "This cat purrs."
+  end
+
+  end
+
+
 
 puppy = Puppy.new
 puppy.fetch("ball")
