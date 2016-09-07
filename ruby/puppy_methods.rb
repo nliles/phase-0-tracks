@@ -1,63 +1,64 @@
 class Puppy
+
   def initialize
-  	puts "Initializing new puppy instance ..."
+    puts "Initializing a new puppy instance..."
   end
+
   def fetch(toy)
     puts "I brought back the #{toy}!"
-    toy
   end
-  def speak(n)
-  	puts "woof " * n
+
+  def speak(number)
+    puts "Woof!!! "*number
   end
-  def rollover
-  	puts "*roll over*"
+
+  def roll_over
+    puts "*Rolls over*"
   end
-  def dog_years(n)
-  	n / 7
-  end 
-  def bite(name)
-  	puts "bite #{name}"
-  end 
-end
 
-puts Puppy.new.fetch("ball")
-puts Puppy.new.speak(9)
-puts Puppy.new.rollover
-puts Puppy.new.dog_years(30)
-puts Puppy.new.bite("Natalie")
-
-
-class Computer
-def initialize
-	puts "Booting up computer..."
-end
-def run_program(program)
-	puts "Run #{program}"
-end
-def delete(file)
-	puts "Delete #{file}"
-end
+  def dog_years(human_year)
+    puts human_year/7
+  end
+  
+  def jump(height)
+    puts "Our dog can jump #{height} feet."
+  end
 
 end
 
-computers = []
-50.times do |x|
-	computers << Computer.new
-end 
 
-p computers.length
+puppy = Puppy.new
+puppy.fetch("ball")
+puppy.speak(3)
+puppy.roll_over
+puppy.dog_years(40)
+puppy.jump(5)
 
-computers.each do |computer| 
-	computer.run_program("Puppy.rb")
-	computer.delete("Puppy.rb")
-end 
+class Cat
+  def initialize
+    puts "Initializing a new cat instance..."
 
+  end
+  
+  def scratch(item)
+    puts "The cat has scratched #{item}."
 
+  end
 
+  def purrs
+    puts "This cat purrs."
+  end
 
+  end
 
+cat_storage = []
 
+50.times {
+  cat_storage << Cat.new}
 
-
+  cat_storage.each do
+    |cat| puts cat.scratch("chair")
+    puts cat.purrs
+  end
 
 
