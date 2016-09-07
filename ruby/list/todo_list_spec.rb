@@ -1,6 +1,6 @@
 
-
 require_relative 'todo_list'
+
 describe Todolist do
   let(:list) { Todolist.new(["do the dishes", "mow the lawn"]) }
    
