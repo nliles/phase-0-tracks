@@ -63,7 +63,7 @@ example_ethnicities = ["Black", "Latino", "White", "Japanese-African", "Prefer n
     cookies = ["oreo","snickerdoodle", "chocolate chip", "peanut butter chocolate", "thin mint"]
     santa.eat_milk_and_cookies(cookies.sample)
     santa.gets_mad_at(santa.reindeer_ranking.sample)
-    puts "Santa is now #{santa.gender="any gender that santa wants to be"}."
+    puts "Santa is now #{santa.gender=example_genders.sample}."
     # test to see if gender can be changed after adding attr_accessor for gender:
     # p santa.gender
     puts ""
