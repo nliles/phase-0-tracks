@@ -2,13 +2,13 @@ class Santa
   attr_accessor :age, :gender
   attr_reader :reindeer_ranking, :ethnicity
 
-  def initialize(gender,ethnicity)
-    puts "Initializing Santa instance ..."
-    @gender = gender
-    @ethnicity = ethnicity
-    @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-    @age = 0
-  end
+    def initialize(gender,ethnicity)
+       puts "Initializing Santa instance ..."
+      @gender = gender
+      @ethnicity = ethnicity
+      @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+      @age = 0
+    end
   
   #Getter and Setter methods which are replaced by attr_reader/attr_accessor:
   # def ethnicity
@@ -19,12 +19,12 @@ class Santa
   #   @gender=new_gender
   # end 
 
-  def celebrate_birthday
-    new_age = age.to_i + 1 
-    puts "Santa turns #{new_age}. Happy birthday, santa!"
-  end
+   def celebrate_birthday
+     new_age = age.to_i + 1 
+     puts "Santa turns #{new_age}. Happy birthday, santa!"
+    end
 
-  def gets_mad_at(reindeer)
+    def gets_mad_at(reindeer)
         i = reindeer_ranking.index(reindeer)
         reindeer_ranking << reindeer_ranking[i]
         reindeer_ranking.delete_at(i)
@@ -56,7 +56,7 @@ example_ethnicities = ["Black", "Latino", "White", "Japanese-African", "Prefer n
 100.times do |santa|
   santa = Santa.new(example_genders.sample,example_ethnicities.sample)
     santa_age = santa.age=(1..140).to_a.sample
-    puts "Santa is a #{santa.gender}, #{santa.ethnicity} and is #{santa_age} years old."
+    puts "Santa is a #{santa_age} year old #{santa.gender} #{santa.ethnicity}."
     santa.celebrate_birthday
     holiday_greeting = ["Merry Christmas","Happy Kwanzaa","Happy Hanukkah","Happy Holidays", "Happy Festivus", "Good Boxing Day"]
     santa.speak(holiday_greeting.sample)
