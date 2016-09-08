@@ -1,40 +1,36 @@
-#module Shout
-  # we'll put some methods here soon, but this code is fine for now!
-#end
+# module Shout
 
-#module Shout
-#  def self.yell_angrily(words)
-#    words + "!!!" + " :("
- # end
-#end
+#   def self.yell_angrily(words)
+#     words + "!!!" + " :("
+#   end
 
-#module Happy
- # def self.yell_happily(words)
- #   words + "!!!" + " :-)"
- # end
-#end
+#   def self.yell_happily(words)
+#     words + "!!!" + " :)"
+#   end
 
-#puts Shout.yell_angrily("Grrrrr, I'm so angry!")
-#puts Happy.yell_happily("I love everyone!")
+# end
 
+# puts Shout.yell_angrily("I hate you")
+# puts Shout.yell_happily("I love you")
 
 module Shout
-  def noise(level)
-    puts "I'm going to scream so #{level} ..."
+
+  def yell_happily(words)
+    words + "!!!" + " *spirit fingers*"
   end
+
 end
 
-class Loud
+class Cheerleader
 	include Shout
 end 
 
-class Soft
+class Singer
 	include Shout
 end 
 
+cheerleader = Cheerleader.new
+puts cheerleader.yell_happily("Raw, team, raw")
 
-loud = Loud.new
-loud.noise("crazy loud")
-
-soft = Soft.new
-soft.noise("softly")
+singer = Singer.new 
+puts singer.yell_happily("You know you make me want to shout")
