@@ -56,7 +56,7 @@ example_ethnicities = ["Black", "Latino", "White", "Japanese-African", "Prefer n
 100.times do |santa|
   santa = Santa.new(example_genders.sample,example_ethnicities.sample)
     santa_age = santa.age=(1..140).to_a.sample
-    puts "Santa is a #{santa_age} year old #{santa.gender} #{santa.ethnicity}."
+    puts "Santa is a #{santa_age} year old #{santa.gender} #{santa.ethnicity} santa."
     santa.celebrate_birthday
     holiday_greeting = ["Merry Christmas","Happy Kwanzaa","Happy Hanukkah","Happy Holidays", "Happy Festivus", "Good Boxing Day"]
     santa.speak(holiday_greeting.sample)
