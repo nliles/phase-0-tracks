@@ -49,6 +49,27 @@ class Santa
 
 end
 
+example_genders = ["Agender", "Female", "Bigender", "Male", "Female", "Gender fluid", "N/A"]
+example_ethnicities = ["Black", "Latino", "White", "Japanese-African", "Prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+
+
+100.times do |santa|
+  santa = Santa.new(example_genders.sample,example_ethnicities.sample)
+    santa_age = santa.age=(1..140).to_a.sample
+    puts "Santa is a #{santa.gender}, #{santa.ethnicity} and is #{santa_age} years old."
+    santa.celebrate_birthday
+    holiday_greeting = ["Merry Christmas","Happy Kwanzaa","Happy Hanukkah","Happy Holidays", "Happy Festivus", "Good Boxing Day"]
+    santa.speak(holiday_greeting.sample)
+    cookies = ["oreo","snickerdoodle", "chocolate chip", "peanut butter chocolate", "thin mint"]
+    santa.eat_milk_and_cookies(cookies.sample)
+    santa.gets_mad_at(santa.reindeer_ranking.sample)
+    puts "Santa is now #{santa.gender="any gender that santa wants to be"}."
+    # test to see if gender can be changed after adding attr_accessor for gender:
+    # p santa.gender
+    puts ""
+end
+
+
 
 
 
