@@ -34,3 +34,14 @@ class Word_game
 end 
 end 
 end
+
+puts "Enter a word for player2 to guess:"
+entered_word = gets.chomp
+game = Word_game.new("#{entered_word}")
+puts ""
+until game.guess_count == game.chances 
+puts "Player2: Guess word:"
+inputted_guess = gets.chomp
+game.user_guess("#{inputted_guess}")
+game.guesses += 1
+end 
