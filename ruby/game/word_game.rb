@@ -7,17 +7,16 @@
 # The word to be guessed is compared to the guessed word to compare.
 # Matching letters are displayed.
 # If word is not guessed in the number of allowed tries, user2 loses.
-# If word is guessed, user1 wins and word is displayed.
+# If word is guessed, user2 wins and word is displayed.
 
 
 class Word_game
-	attr_reader :word
-	attr_accessor :guess, :chances, :win
+	attr_reader :word, :win
+	attr_accessor :chances
 	
 	def initialize(word)
 		@word = word
 		@chances = word.length
-		@guess = guess
 		@display = ''
 		@win = false
     end 
@@ -33,7 +32,8 @@ class Word_game
     def guess_word(guess)
 	display = ''
   	@word.chars { |letter| 
-    display += (guess.include? letter)? letter : ' _' }
+    display += (guess.include? letter)? letter : ' _' 
+  	}
     puts display
     if !display.include?(' _')
     	@win = true 
@@ -46,7 +46,7 @@ end
 
 
 puts "Enter a word for player2 to guess:"
-entered_word = gets.chomphe
+entered_word = gets.chomp
 game = Word_game.new("#{entered_word}")
 game.display_word
 until game.chances == 0 || game.win == true
@@ -59,4 +59,7 @@ if game.win == false && game.chances == 0
 	puts "You lost. Game over!"
 end 
 end 
+
+
+
 	
