@@ -12,14 +12,14 @@
 
 class Word_game
 	attr_reader :word
-	attr_accessor :guess, :chances, :is_over
+	attr_accessor :guess, :chances, :win
 	
 	def initialize(word)
 		@word = word
 		@chances = word.length
 		@guess = guess
 		@display = ''
-		@is_over = false
+		@win = false
     end 
    
     def display_word
@@ -35,28 +35,28 @@ class Word_game
   	@word.chars { |letter| 
     display += (guess.include? letter)? letter : ' _' }
     puts display
-    if display.include?(' _')
-    	@is_over  = false
-    else 
-    	@is_over = true
+    if !display.include?(' _')
+    	@win = true 
     	puts "You guessed it!"
+    else 
+    	@win = false
     end
    end
 end
 
 
 puts "Enter a word for player2 to guess:"
-entered_word = gets.chomp
+entered_word = gets.chomphe
 game = Word_game.new("#{entered_word}")
 game.display_word
-
-until game.chances == 0 || game.is_over == true
+until game.chances == 0 || game.win == true
 puts "#{game.chances} chances left."
 puts "Player2: Guess word:"
 inputted_guess = gets.chomp
 game.guess_word("#{inputted_guess}")
 game.chances -= 1
+if game.win == false && game.chances == 0 
+	puts "You lost. Game over!"
 end 
-
-
+end 
 	
