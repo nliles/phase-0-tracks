@@ -17,7 +17,6 @@ class Word_game
 	def initialize(word)
 		@word = word
 		@chances = word.length
-		@display = ''
 		@win = false
     end 
    
