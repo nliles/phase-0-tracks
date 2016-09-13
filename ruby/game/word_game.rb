@@ -18,6 +18,7 @@ class Word_game
 		@word = word
 		@chances = word.length
 		@guess = guess
+		@display = ''
     end 
    
     def display_word
@@ -44,8 +45,14 @@ game = Word_game.new("#{entered_word}")
 game.display_word
 
 until game.chances == 0
+puts "#{game.chances} chances left."
 puts "Player2: Guess word:"
 inputted_guess = gets.chomp
 game.guess_word("#{inputted_guess}")
 game.chances -= 1
 end 
+# if display.include?" _"
+# 	puts "Sorry, you lost."
+# else 
+# 	puts "You win!"
+# end	
