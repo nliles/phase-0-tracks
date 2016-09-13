@@ -11,11 +11,11 @@
 
 
 class Word_game
-	attr_reader :word, :chances
-	attr_accessor :guess, :guess_count
+	attr_reader :word
+	attr_accessor :guess, :chances
 	
 	def initialize(word)
-		@word = word.downcase
+		@word = word
 		@chances = word.length
 		@guess = guess
     end 
@@ -26,6 +26,7 @@ class Word_game
        display
        puts 'Guess the word:'+ display
      end 
+
      
     def guess_word(guess)
 	display = ''
@@ -33,6 +34,7 @@ class Word_game
     display += (guess.include? letter)? letter : ' _' }
     puts display
     end
+   
 end
 
 
@@ -40,10 +42,10 @@ puts "Enter a word for player2 to guess:"
 entered_word = gets.chomp
 game = Word_game.new("#{entered_word}")
 game.display_word
-# puts ""
-# until game.chances == 0
-# puts "Player2: Guess word:"
+
+until game.chances == 0
+puts "Player2: Guess word:"
 inputted_guess = gets.chomp
 game.guess_word("#{inputted_guess}")
-# game.guess_count += 1
-# end 
+game.chances -= 1
+end 
