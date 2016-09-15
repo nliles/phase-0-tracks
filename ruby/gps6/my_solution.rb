@@ -1,59 +1,62 @@
 # Virus Predictor
 
-# I worked on this challenge [Sierra].
-# We spent [1] hours on this challenge.
+# I worked on this challenge [by myself, with: ].
+# We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-# Require_relative allows your to load and access a file. Require_relative is used when the file is in the same directory. 
+#
 #
 require_relative 'state_data'
 
 class VirusPredictor
-  attr_reader :population_density, :population, :state
- 
- #Call this whenever a new class object is created.
+
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
-  
- #Calls predicted_deaths and speed_of_spread  
   def virus_effects
-    predicted_deaths
-    speed_of_spread
+    predicted_deaths(@population_density, @population, @state)
+    speed_of_spread(@population_density, @state)
   end
-  
-  
-private
 
-#Calculates the predicted deaths based on population_density, population, and state.
-  def predicted_deaths
-    if population_density < 50
-       number_of_deaths = (population * 0.05).floor
+  private
+
+  def predicted_deaths(population_density, population, state)
+    # predicted deaths is solely based on population density
+    if @population_density >= 200
+      number_of_deaths = (@population * 0.4).floor
+    elsif @population_density >= 150
+      number_of_deaths = (@population * 0.3).floor
+    elsif @population_density >= 100
+      number_of_deaths = (@population * 0.2).floor
+    elsif @population_density >= 50
+      number_of_deaths = (@population * 0.1).floor
     else
-      multiplier = (population_density/50 * 0.1)
-      number_of_deaths = (population * multiplier).floor
+      number_of_deaths = (@population * 0.05).floor
     end
 
-    print "#{state} will lose #{number_of_deaths} people in this outbreak"
+    print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
   end
-   #Calculates the speed of spread of the virus based on population density and state
-  def speed_of_spread #in months
+
+  def speed_of_spread(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
-    # every time the population density goes up by 50, the speed goes down by .5
-    
-    if population_density < 50
-      speed = 2.5
-    elsif population_density >= 200
-      speed = 0.5
+    speed = 0.0
+
+    if @population_density >= 200
+      speed += 0.5
+    elsif @population_density >= 150
+      speed += 1
+    elsif @population_density >= 100
+      speed += 1.5
+    elsif @population_density >= 50
+      speed += 2
     else
-      speed = 2.5 - (population_density/50 * 0.5).floor
+      speed += 2.5
     end
-    
 
     puts " and will spread across the state in #{speed} months.\n\n"
 
@@ -64,36 +67,21 @@ end
 #=======================================================================
 
 # DRIVER CODE
+ # initialize VirusPredictor for each state
 
 
-STATE_DATA.each do |state, population_density, population|
-  state = VirusPredictor.new(state, STATE_DATA[state][:population_density],
-STATE_DATA[state][:population])
-state.virus_effects
-end 
+alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
+alabama.virus_effects
+
+jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
+jersey.virus_effects
+
+california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
+california.virus_effects
+
+alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
+alaska.virus_effects
 
 
 #=======================================================================
 # Reflection Section
-
-# What are the differences between the two different hash syntaxes shown in the state_data file?
-# The "hashy hash" uses a hash rocket while the nested data structure uses symbol. The hash rocket gives you more
-# flexibility in usage. The hash rocket allows you to use a string or a symbol as a key.
-
-# What does require_relative do? How is it different from require?
-# Require_relative allows your to load and access a file. Require_relative is used when the file is in the same directory. 
-
-# What are some ways to iterate through a hash?
-# For this challenge, I iterated through my hash using hash.each and a block method. You could also use  each_pair or
-# each_key or each_value if you wanted to only iterate over a key or a value.
-
-# When refactoring virus_effects, what stood out to you about the variables, if anything?
-# I think I was still a bit confused about when instance variables were needed and when class methods
-# needed parameters. I can clearly see that since those variables were included in initialization, it's 
-# no longer necessary to pass them through the other methods.
-
-# What concept did you most solidify in this challenge?
-# This challenge really helped me understand constants, the use of private, and how to refactor my code. 
-
-
-
