@@ -37,28 +37,23 @@ compare_values({'name':'Steven', 'age':'54'},{'name':'Tamir', 'age':'54'});
 
 // Create a function that will take a number as a parameter and generate a number of strings equal to this number.
 // Store strings in an array. 
-// Create empty strings that can be generated with random characters and numbers
-// Set the length of the string and the characters
-// Randomly fill the string with characters and numbers
-// Store string in an array
-// Do this for each string 
+// Create a loop that will run a number of times(number provided as a parameter)
+// Set the minimum length and maximum length of the randomly generated string.
+// Randomly fill the string with characters 
 // Print result
 
 
 
 
 function Randomstring(number) {
-	array = new Array(number);
-	var length = 20;
-	var chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	var result = '';
-	for (var i=length; i>0; --i) result +=chars
-	[Math.floor(Math.random() * chars.length)];
-	array[i] = result;
-   console.log(array);
+    var times = number;
+    for(var i=0; i < times; i++){
+  console.log(Math.random().toString(36).replace(/[^a-z]+/g, '').substr(1, 10));
+}
 }
 
- Randomstring(3);
+
+Randomstring(3);
 
 
 
