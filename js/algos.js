@@ -32,7 +32,7 @@ function compare_values(hash_1, hash_2) {
   }, {});
 }
 
-compare_values({'name':'Steven', 'age':'54'},{'name':'Tamir', 'age':'54'});
+console.log(compare_values({'name':'Steven', 'age':'54'},{'name':'Tamir', 'age':'54'}));
 
 
 // Create a function that will take a number as a parameter and generate a number of strings equal to this number.
