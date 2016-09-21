@@ -46,14 +46,20 @@ console.log(compare_values({'name':'Steven', 'age':'54'},{'name':'Tamir', 'age':
 
 
 function Randomstring(number) {
+    var random_array = []
     var times = number;
     for(var i=0; i < times; i++){
-  console.log(Math.random().toString(36).replace(/[^a-z]+/g, '').substr(1, 10));
+    random_array.push(Math.random().toString(36).replace(/[^a-z]+/g, '').substr(1, 10));
 }
+// console.log(random_array);
+return random_array
 }
 
 
 Randomstring(3);
+
+var test=Randomstring(3);  
+Longest_string(test);
 
 
 
