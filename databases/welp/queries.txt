@@ -1,0 +1,16 @@
+
+
+3.)
+SELECT users.First_name, users.Last_name, businesses.name,reviews.stars,reviews.comment FROM users JOIN reviews ON users.ID = reviews.user_id JOIN businesses ON businesses.ID = reviews.business_id;
+Bradford|Pitt|Grundy Hollow Wedding Chapel|5|great food!
+Angela|Jolie|Amir's Towing|4|pretty good!
+Angela|Jolie|The Beagle Nightclub|1|terrible
+Mandy|Kaling|Grundy Hollow Wedding Chapel|3|average
+Angela|Jolie|Lotus Yoga|3|okay
+Steven|Wonder|The Beagle Nightclub|4|great service
+Angela|Jolie|Lotus Yoga|3|okay
+
+4.)
+SELECT users.First_name, users.Last_name, businesses.name,reviews.stars,reviews.comment FROM users JOIN reviews ON users.ID = reviews.user_id JOIN businesses ON businesses.ID = reviews.business_id WHERE business_id = 1;
+Bradford|Pitt|Grundy Hollow Wedding Chapel|5|great food!
+Mandy|Kaling|Grundy Hollow Wedding Chapel|3|average
