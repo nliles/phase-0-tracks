@@ -28,12 +28,14 @@ def add_activity(db, activity)
  	$db.execute("INSERT INTO activities (activity) VALUES (?)",[activity])
 end
 
+
+
 def view_activities
-	activities = $db.execute("SELECT * FROM activities;")
-	activities.each do |activity|
-		puts activity
-	end 
-end 
+  activities = $db.execute("SELECT * FROM activities;")
+    activities.each do | activity |
+      puts "#{activity['id']}. #{activity['activity']}"
+    end
+end
 
 
 def add_activity_log(db,activity_id, activity_date, activity_duration)
