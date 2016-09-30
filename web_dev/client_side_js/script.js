@@ -19,6 +19,10 @@ var head = document.getElementsByTagName("head")[0];
 
 head.style.fontFamily = "Helvetica";
 
+
+
+body.style.fontFamily = "Helvetica";
+
 var b = document.createElement("BR");
 
 document.body.appendChild(b);
