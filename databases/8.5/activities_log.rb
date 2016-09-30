@@ -11,7 +11,7 @@ create_activity_table = <<-SQL
 SQL
 $db.execute(create_activity_table)
 
-#create idea table with 5 lists: category, description, time required (in minutes), done status, cost (0 to 5)
+
  create_activity_log = <<-SQL
   CREATE TABLE IF NOT EXISTS activities_log(
     id INTEGER PRIMARY KEY,
@@ -24,21 +24,42 @@ SQL
 $db.execute(create_activity_log)
 
 
-def add_activity(db, activity)
- 	$db.execute("INSERT INTO activities (activity) VALUES (?)",[activity])
+def include_activity(db, activity)
+   activities_list = []
+   $db.execute("SELECT activity FROM activities").each do |x|
+   activities_list << x['activity'].downcase
+  end
+    activities_list.include?(activity) ? true : false
 end
 
+
+def add_activity(db, activity)
+  if !include_activity(db, activity)
+  $db.execute("INSERT INTO activities (activity) VALUES (?)",[activity])
+  end
+end
+
+
 def view_activities
-	activities = $db.execute("SELECT * FROM activities;")
-	activities.each do |activity|
-		puts activity
-	end 
-end 
+  activities = $db.execute("SELECT * FROM activities;")
+    activities.each do | activity |
+      puts "#{activity['id']}. #{activity['activity']}"
+    end
+end
 
 
 def add_activity_log(db,activity_id, activity_date, activity_duration)
  	$db.execute("INSERT INTO activities_log (activity_id, activity_date, activity_duration) VALUES (?,?,?)",
  		[activity_id, activity_date, activity_duration])
+end
+
+def view_activities_log
+  activities_log = $db.execute("SELECT * FROM activities_log;")
+    activities_log.each do |log|
+      puts ""
+      puts "Activity input:"
+      puts "#{log['id']}, #{log['activity_id']}, #{log['activity_date']}, #{log['activity_duration']}"
+    end
 end
 
 add_activity($db, "Yoga")
@@ -47,6 +68,7 @@ add_activity($db, "Hiking")
 add_activity($db, "Cycling")
 add_activity($db, "Cross Fit")
 view_activities
+view_activities_log
 
 puts "Would you like to input an activity:"
 input = gets.chomp 
@@ -59,7 +81,7 @@ activity_date = gets.chomp
 puts "Please enter duration:"
 activity_duration = gets.chomp
 
-add_activity_log(db, "#{activity_id}","#{activity_date}","#{activity_duration}")
+add_activity_log($db, "#{activity_id}","#{activity_date}","#{activity_duration}")
 
 puts "Would you like to input another activity?"
 input = gets.chomp
