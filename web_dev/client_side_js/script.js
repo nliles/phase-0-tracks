@@ -38,9 +38,9 @@ var text2 = document.createTextNode("Buy Boots Here");
 button2.appendChild(text2);
 document.body.appendChild(button2);
 
-function addBlackBorder() {
-	var photo = document.getElementsByTagName("img")[0];
-	photo.style.border="3px solid black";
+function addBlackBorder(event) {
+	event.target.style.border="3px solid black";
 }
 
-addBlackBorder();
+	var photo = document.getElementsByTagName("img")[0];
+	photo.addEventListener("click", addBlackBorder);
