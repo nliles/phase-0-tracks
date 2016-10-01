@@ -42,6 +42,12 @@ $(document).ready(function() {
    });
 });
 
+$(document).ready(function() {
+   $("#shade9").add("#shade11").click(function() {
+      $(this).effect('bounce',{times:10},100);	
+   });
+});
+
 
 $(document).ready(function(){
 $("#shade10").click(function() {
